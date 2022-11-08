@@ -1,9 +1,16 @@
 import React from 'react';
+import DynamicTitle from '../../Hooks/DynamicTitle';
+import About from './About/About';
+import Slider from './Slider/Slider';
 
 const Home = () => {
+
+    DynamicTitle("Home");
+
     return (
         <div>
-            <h1 className='text-6xl font-semibold text-orange-500 my-16 text-center'>Home</h1>
+            <Slider></Slider>
+            <About></About>
         </div>
     );
 };

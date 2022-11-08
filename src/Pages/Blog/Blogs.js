@@ -1,6 +1,10 @@
 import React from 'react';
+import DynamicTitle from '../../Hooks/DynamicTitle';
 
 const Blogs = () => {
+
+    DynamicTitle("Blogs");
+
     return (
         <div>
             <div className="collapse">

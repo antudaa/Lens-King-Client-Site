@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
+import logo from '../../../images/favicon.png';
+import { FaUser } from "react-icons/fa";
+
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log("Sign Out Successful.")
+            })
+            .catch((error) => console.error(error));
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -16,20 +32,47 @@ const Header = () => {
                         <li><Link to='/signup'>Sign Up</Link></li>
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link className="btn btn-ghost normal-case text-xl">
+                    <img className='w-10 h-10 mr-6' src={logo} alt="" /> LENS KING</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/blogs'>Blogs</Link></li>
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/signup'>Sign Up</Link></li>
+                    {/* <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/signup'>Sign Up</Link></li> */}
+                    {
+                        user?.uid ?
+
+                            <>
+                                <li><li><Link onClick={handleLogOut}>Log Out</Link></li></li>
+                                <li><Link>{user?.displayName}</Link></li>
+
+                            </>
+                            :
+                            <>
+                                <li><Link to='/login'>Login</Link></li>
+                                <li><Link to='/signup'>Sign Up</Link></li>
+                            </>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
                 <div className="w-10 rounded-full">
-                    <img alt='' src="https://placeimg.com/80/80/people" />
+                    {
+                        user?.photoURL ?
+                            <img
+                                className='mx-3'
+                                title={user?.displayName}
+                                style={{ height: '36px', borderRadius: '50%' }}
+                                src={user?.photoURL}
+                                alt=''>
+                            </img>
+                            :
+                            <FaUser className='mx-3' />
+                    }
                 </div>
+
             </div>
         </div>
     );
