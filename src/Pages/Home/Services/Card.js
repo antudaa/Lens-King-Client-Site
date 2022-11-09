@@ -6,7 +6,6 @@ const Card = ({ service }) => {
     const { image_url, _id, service_name, details, packages } = service;
 
     const detail = details.slice(0, 100);
-    console.log(detail);
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
