@@ -1,10 +1,17 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
+import DynamicTitle from '../../Hooks/DynamicTitle';
+import DisplayReview from './DisplayReview/DisplayReview';
 import Review from './Review/Review';
 
 const ServiceDetails = () => {
 
     const data = useLoaderData();
+
+    DynamicTitle('Service-Details');
+
+    const { user } = useContext(AuthContext);
 
     const { _id, image_url, service_name, details, packages } = data;
 
@@ -26,7 +33,22 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <Review></Review>
+            <DisplayReview></DisplayReview>
+            {
+                user?.email ?
+                    <Review
+                        key={_id}
+                        data={data}
+                        user={user}
+                    ></Review> :
+                    <div className='mb-6 mt-12 text-center'>
+                        <h1 className='text-2xl font-semibold mb-6 text-emerald-500'>Please login first to give a review!</h1>
+                        <Link to='/login'>
+                            <button className="btn btn-outline btn-primary">Login</button>
+                        </Link>
+
+                    </div>
+            }
         </div>
     );
 };

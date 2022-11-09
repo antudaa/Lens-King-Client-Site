@@ -1,16 +1,47 @@
 import React from 'react';
 
-const Review = () => {
+
+
+const Review = ({ data , user}) => {
+
+
+    const { _id } = data;
 
 
     const handleReview = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const email = form.email.value;
         const comment = form.comments.value;
 
-        console.log(`${name}, ${email}, ${comment}`);
+        const review = {
+            serviceId: _id,
+            name: user.displayName,
+            email: user.email,
+            comment: comment,
+        }
+
+        console.log(review);
+
+        if (comment.length < 4) {
+            alert("Please give a reasonable comment Please...");
+        } else {
+            fetch(`http://localhost:5000/reviews`, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(review)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        form.reset();
+                        alert('Thanks for your valuable Review...');
+                    }
+                    console.log(data)
+                })
+                .catch(err => console.log(err.message));
+        }
 
     }
 
@@ -21,18 +52,6 @@ const Review = () => {
 
             <div>
                 <form onSubmit={handleReview} action="">
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Name (Optional).</span>
-                        </label>
-                        <input name='name' type="text" placeholder="Name" className="input input-bordered input-info w-full " />
-                    </div>
-                    <div className='my-6'>
-                        <label className="label">
-                            <span className="label-text">Email (Optional).</span>
-                        </label>
-                        <input name='email' type="email" placeholder="Email" className="input input-bordered input-info w-full" />
-                    </div>
                     <div className='my-6'>
                         <label className="label">
                             <span className="label-text">Comments</span>
@@ -41,9 +60,11 @@ const Review = () => {
                     </div>
                     <div className='mt-10 text-center'>
                         <button type='submit' className="btn btn-outline btn-primary">Submit</button>
+                        
                     </div>
                 </form>
             </div>
+
         </div>
     );
 };

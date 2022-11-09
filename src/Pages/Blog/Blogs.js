@@ -6,7 +6,8 @@ const Blogs = () => {
     DynamicTitle("Blogs");
 
     return (
-        <div>
+        <div className='text-center mb-32'>
+            <h1 className='text-4xl font-bold my-16 text-cyan-500'>Our Blogs</h1>
             <div className="collapse">
                 <input type="checkbox" />
                 <div className="collapse-title text-xl font-medium">
