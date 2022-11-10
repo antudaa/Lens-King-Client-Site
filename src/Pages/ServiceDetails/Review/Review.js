@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 
 
-const Review = ({ data , user}) => {
+const Review = ({ data , user }) => {
 
 
     const { _id, service_name } = data;
@@ -15,13 +15,13 @@ const Review = ({ data , user}) => {
         const review = {
             serviceId: _id,
             user : user?.uid,
+            img : user.photoURL,
             service : service_name,
             name: user.displayName,
             email: user.email,
             comment: comment,
         };
 
-        console.log(review);
 
         if (comment.length < 4) {
             alert("Please give a reasonable comment Please...");
@@ -39,7 +39,6 @@ const Review = ({ data , user}) => {
                         form.reset();
                         alert('Thanks for your valuable Review...');
                     }
-                    console.log(data)
                 })
                 .catch(err => console.log(err.message));
         }

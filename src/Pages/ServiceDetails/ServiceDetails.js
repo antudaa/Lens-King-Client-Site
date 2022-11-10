@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import DynamicTitle from '../../Hooks/DynamicTitle';
@@ -10,6 +10,7 @@ const ServiceDetails = () => {
     const data = useLoaderData();
 
     DynamicTitle('Service-Details');
+
 
     const { user } = useContext(AuthContext);
 
@@ -34,8 +35,9 @@ const ServiceDetails = () => {
                 </div>
             </div>
             <DisplayReview
-                key={user._id}
+                key={_id}
                 data={data}
+                user={user}
             ></DisplayReview>
             {
                 user?.uid ?

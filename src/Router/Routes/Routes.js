@@ -48,7 +48,8 @@ const router = createBrowserRouter([
             },
             {
                 path : '/myReviews',
-                element : <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+                element : <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
+                loader : (() => fetch(``))
             },
             {
                 path : '/addService',

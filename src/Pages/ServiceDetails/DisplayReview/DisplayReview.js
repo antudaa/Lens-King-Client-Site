@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const DisplayReview = ({ data, user }) => {
 
     const { _id } = data;
-
+    
     const [review, setReview] = useState([]);
-
-
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviewsId?serviceId=${_id}`)
@@ -18,7 +17,6 @@ const DisplayReview = ({ data, user }) => {
             .catch(error => console.log(error.message));
     }, []);
 
-    console.log(review);
 
 
     return (
@@ -46,12 +44,12 @@ const DisplayReview = ({ data, user }) => {
                                                         // user?.photoURL?
                                                         // <img src={user?.photoURL} alt="Avatar Tailwind CSS Component" />:
                                                         // <FaUser/>
-                                                        user?.photoURL ?
+                                                        review?.photoURL ?
                                                             <img
                                                                 className='mx-3'
-                                                                title={user?.displayName}
+                                                                title={review?.displayName}
                                                                 style={{ height: '36px', borderRadius: '50%' }}
-                                                                src={user?.photoURL}
+                                                                src={review?.photoURL}
                                                                 alt=''>
                                                             </img>
                                                             :
@@ -61,7 +59,6 @@ const DisplayReview = ({ data, user }) => {
                                             </div>
                                             <div>
                                                 <div className="font-bold">{rev.name}</div>
-                                                {/* <div className="text-sm opacity-50">United States</div> */}
                                             </div>
                                         </div>
                                     </td>
@@ -70,9 +67,6 @@ const DisplayReview = ({ data, user }) => {
 
                                     </td>
                                     <td>{rev.comment}</td>
-                                    {/* <th>
-                                        <button className="btn btn-ghost btn-xs">details</button>
-                                    </th> */}
                                 </tr>
                             ))
                         }
