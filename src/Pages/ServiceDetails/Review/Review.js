@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 
 const Review = ({ data , user}) => {
 
 
-    const { _id } = data;
-
+    const { _id, service_name } = data;
 
     const handleReview = (event) => {
         event.preventDefault();
@@ -15,10 +14,12 @@ const Review = ({ data , user}) => {
 
         const review = {
             serviceId: _id,
+            user : user?.uid,
+            service : service_name,
             name: user.displayName,
             email: user.email,
             comment: comment,
-        }
+        };
 
         console.log(review);
 
@@ -44,6 +45,8 @@ const Review = ({ data , user}) => {
         }
 
     }
+
+
 
     return (
         <div className='p-6'>

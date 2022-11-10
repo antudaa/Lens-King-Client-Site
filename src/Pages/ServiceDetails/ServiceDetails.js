@@ -33,9 +33,12 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <DisplayReview></DisplayReview>
+            <DisplayReview
+                key={user._id}
+                data={data}
+            ></DisplayReview>
             {
-                user?.email ?
+                user?.uid ?
                     <Review
                         key={_id}
                         data={data}
