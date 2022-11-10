@@ -4,6 +4,10 @@ import { FaGoogle, FaGithub, FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import DynamicTitle from '../../Hooks/DynamicTitle';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const SignUp = () => {
@@ -26,6 +30,17 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast(`User logged In Successfully ${email}`, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                form.reset();
             })
             .catch(error => console.log(error.message));
 
@@ -98,6 +113,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

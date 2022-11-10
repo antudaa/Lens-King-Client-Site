@@ -1,4 +1,8 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const Skills = () => {
     return (
@@ -31,7 +35,11 @@ const Skills = () => {
                         </div>
                     </div>
                     <div className='lg:w-1/2'>
-                        <img  alt='' src="https://wiso.foxthemes.me/wp-content/uploads/2018/04/josh-applegate-211348.jpg" className="max-w-sm  rounded-lg shadow-2xl" />
+                        <PhotoProvider>
+                            <PhotoView src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/josh-applegate-211348.jpg'>
+                                <img className="max-w-sm  rounded-lg shadow-2xl" src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/josh-applegate-211348.jpg' alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
                     </div>
                 </div>
             </div>

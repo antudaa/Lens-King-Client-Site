@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const About = () => {
     return (
@@ -7,11 +11,15 @@ const About = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='lg:w-1/2'>
-                    <img alt='' src="https://wiso.foxthemes.me/wp-content/uploads/2018/04/sam-burriss-435641-e1526906975869.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+                        <PhotoProvider>
+                            <PhotoView src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/sam-burriss-435641-e1526906975869.jpg'>
+                                <img className="max-w-sm  rounded-lg shadow-2xl" src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/sam-burriss-435641-e1526906975869.jpg' alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
                     </div>
                     <div className='lg:w-1/2'>
                         <h1 className="text-5xl font-bold">My name is Alexa, <br />
-                        I'm a photographer.
+                            I'm a photographer.
                         </h1>
                         <p className="py-6 text-xl">The world without photography will be meaningless to us if there is no light and color, which opens up our minds and expresses passion.</p>
 

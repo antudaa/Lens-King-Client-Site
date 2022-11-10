@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Review = ({ data , user }) => {
+const Review = ({ data, user }) => {
 
 
     const { _id, service_name } = data;
@@ -14,9 +17,9 @@ const Review = ({ data , user }) => {
 
         const review = {
             serviceId: _id,
-            user : user?.uid,
-            img : user.photoURL,
-            service : service_name,
+            user: user?.uid,
+            img: user.photoURL,
+            service: service_name,
             name: user.displayName,
             email: user.email,
             comment: comment,
@@ -24,9 +27,18 @@ const Review = ({ data , user }) => {
 
 
         if (comment.length < 4) {
-            alert("Please give a reasonable comment Please...");
+            toast('Please give a reasonable comment Please...', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         } else {
-            fetch(`http://localhost:5000/reviews`, {
+            fetch(`https://lens-king-server.vercel.app/reviews`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -37,7 +49,16 @@ const Review = ({ data , user }) => {
                 .then(data => {
                     if (data.acknowledged) {
                         form.reset();
-                        alert('Thanks for your valuable Review...');
+                        toast('Thanks for your valuable Review...', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
                     }
                 })
                 .catch(err => console.log(err.message));
@@ -62,11 +83,11 @@ const Review = ({ data , user }) => {
                     </div>
                     <div className='mt-10 text-center'>
                         <button type='submit' className="btn btn-outline btn-primary">Submit</button>
-                        
+
                     </div>
                 </form>
             </div>
-
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

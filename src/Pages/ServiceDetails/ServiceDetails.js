@@ -4,6 +4,10 @@ import { AuthContext } from '../../Context/AuthProvider';
 import DynamicTitle from '../../Hooks/DynamicTitle';
 import DisplayReview from './DisplayReview/DisplayReview';
 import Review from './Review/Review';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const ServiceDetails = () => {
 
@@ -12,7 +16,7 @@ const ServiceDetails = () => {
     DynamicTitle('Service-Details');
 
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const { _id, image_url, service_name, details, packages } = data;
 
@@ -20,10 +24,16 @@ const ServiceDetails = () => {
         <div className='py-16 '>
             <div className="card w-full glass">
                 <div className='w-2/3 mx-auto'>
-                    <figure><img className='rounded-lg ' src={image_url} alt="car!" /></figure>
+                    <figure>
+                        <PhotoProvider>
+                            <PhotoView src={image_url}>
+                                <img className=" rounded-lg " src={image_url} alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
+                    </figure>
                 </div>
                 <div className="card-body">
-                    <h2 className="card-title">{service_name}
+                    <h2 className="card-title">{service_name?.service_name}
                         <div className="badge badge-secondary">Rating : 4.5</div>
                     </h2>
                     <p>{details}</p>
@@ -38,6 +48,7 @@ const ServiceDetails = () => {
                 key={_id}
                 data={data}
                 user={user}
+                logOut={logOut}
             ></DisplayReview>
             {
                 user?.uid ?

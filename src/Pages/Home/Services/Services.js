@@ -7,7 +7,7 @@ const Services = () => {
     const [services, setService] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/homeServices')
+        fetch('https://lens-king-server.vercel.app/homeServices')
             .then(res => res.json())
             .then(data => setService(data))
             .catch(error => console.log(error.message));

@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 import { FaGoogle, FaGithub, FaFacebook } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import DynamicTitle from '../../Hooks/DynamicTitle';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -25,8 +28,40 @@ const Login = () => {
         login(email, password)
             .then(userCredential => {
                 const user = userCredential.user;
-                console.log(user);
-                alert(`User logedIn Successfully ${email}`)
+
+                toast(`User logged In Successfully ${email}`, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                })
+
+                // const currentUser = {
+                //     uid : user.uid
+                // }
+
+                // console.log(currentUser);
+
+                // Getting jwt token
+                // fetch(`https://lens-king-server.vercel.app/jwt`, {
+                //     method : 'POST', 
+                //     headers : {
+                //         'content-type' : 'application/json'
+                //     },
+                //     body : JSON.stringify(currentUser)
+                // })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+
+                    
+                })
+
+                // Navigate(from, { replace: true });
                 form.reset();
             })
             .catch((error) => {
@@ -97,6 +132,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

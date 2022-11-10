@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const ServiceCard = ({ service }) => {
 
@@ -12,7 +16,13 @@ const ServiceCard = ({ service }) => {
             <div>
                 <div className="card lg:card-side bg-base-100 shadow-xl">
                     <div className='lg:w-1/3'>
-                        <figure><img className='rounded-lg' src={image_url} alt="Album" /></figure>
+                        <figure>
+                            <PhotoProvider>
+                                <PhotoView src={image_url}>
+                                    <img className=" rounded-lg " src={image_url} alt="" />
+                                </PhotoView>
+                            </PhotoProvider>
+                        </figure>
                     </div>
                     <div className="card-body lg:w-2/3">
                         <h2 className="card-title">

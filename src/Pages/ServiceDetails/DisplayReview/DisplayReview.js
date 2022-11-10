@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Context/AuthProvider';
 const DisplayReview = ({ data, user }) => {
 
     const { _id } = data;
-    
+
     const [review, setReview] = useState([]);
 
     useEffect(() => {

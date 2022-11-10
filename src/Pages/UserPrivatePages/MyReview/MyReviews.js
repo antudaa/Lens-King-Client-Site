@@ -17,7 +17,7 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsUid?user=${user.uid}`)
+        fetch(`https://lens-king-server.vercel.app/reviewsUid?user=${user.uid}`)
             .then(res => res.json())
             .then(data => setReview(data));
     }, []);
@@ -27,14 +27,14 @@ const MyReviews = () => {
         console.log(id);
         const proceed = window.confirm("Are you sure? You want to delete this review!");
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://lens-king-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
                         // alert("Successfully deleted...")
-                        toast.success('Successful', {
+                        toast.success('Successfully deleted ...', {
                             position: "top-center",
                             autoClose: 5000,
                             hideProgressBar: false,
