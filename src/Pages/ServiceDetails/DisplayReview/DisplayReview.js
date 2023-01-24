@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
-import { AuthContext } from '../../../Context/AuthProvider';
 
 const DisplayReview = ({ data, user }) => {
 
@@ -9,7 +8,7 @@ const DisplayReview = ({ data, user }) => {
     const [review, setReview] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsId?serviceId=${_id}`)
+        fetch(`https://lens-king-server-antudaa.vercel.app/reviewsId?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => {
                 setReview(data)

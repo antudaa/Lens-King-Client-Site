@@ -94,12 +94,12 @@ const Login = () => {
 
 
     return (
-        <div className='my-10'>
-            <h1 className='text-orange-500 text-5xl font-semibold text-center my-10'>Login</h1>
+        <div className='my-10 '>
+            <h1 className='text-white text-5xl font-semibold text-center my-4'>Login</h1>
             <div className="">
                 <div className="hero-content flex-col lg:flex-row">
 
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-10">
+                    <div className="card border-white flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300 py-10">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">

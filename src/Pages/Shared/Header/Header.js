@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
-import logo from '../../../images/favicon.png';
+import logo from '../../../images/newLogo.png';
 import { FaUser } from "react-icons/fa";
 
 
@@ -48,7 +48,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl">
-                    <img className='w-10 h-10 mr-6' src={logo} alt="" /> LENS KING</Link>
+                    <img className='w-16 h-12 mr-6' src={logo} alt="" /> LENS KING</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

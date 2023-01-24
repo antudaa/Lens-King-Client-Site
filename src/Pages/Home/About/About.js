@@ -13,7 +13,7 @@ const About = () => {
                     <div className='lg:w-1/2'>
                         <PhotoProvider>
                             <PhotoView src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/sam-burriss-435641-e1526906975869.jpg'>
-                                <img className="max-w-sm  rounded-lg shadow-2xl" src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/sam-burriss-435641-e1526906975869.jpg' alt="" />
+                                <img className=" rounded-lg shadow-2xl" src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/sam-burriss-435641-e1526906975869.jpg' alt="" />
                             </PhotoView>
                         </PhotoProvider>
                     </div>

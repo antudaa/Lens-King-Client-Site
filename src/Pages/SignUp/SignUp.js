@@ -74,7 +74,7 @@ const SignUp = () => {
 
     return (
         <div className='my-10'>
-            <h1 className='text-orange-500 text-5xl font-semibold text-center my-10'>Sign Up</h1>
+            <h1 className='text-white text-5xl font-semibold text-center my-4'>Sign Up</h1>
             <div className="">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-10">

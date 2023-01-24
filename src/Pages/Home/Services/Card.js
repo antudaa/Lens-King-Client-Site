@@ -21,10 +21,10 @@ const Card = ({ service }) => {
 
             <div className="card-body">
                 <h2 className="card-title">
-                    {service_name?.service_name}
+                    {service_name}
                     <div className="badge badge-secondary">Rating : 4.5</div>
                 </h2>
-                <p>{`${detail?.detail}`}</p>
+                <p>{`${detail}`}</p>
                 <div className="card-actions justify-start mt-4">
                     <div className="badge badge-outline">{`Silver : ${packages.silver.price}`}</div>
                     <div className="badge badge-outline">{`Gold : ${packages.gold.price}`}</div>

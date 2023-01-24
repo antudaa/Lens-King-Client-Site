@@ -14,6 +14,7 @@ const ServiceDetails = () => {
     const data = useLoaderData();
 
     DynamicTitle('Service-Details');
+    console.log(data);
 
 
     const { user, logOut } = useContext(AuthContext);
