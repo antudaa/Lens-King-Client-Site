@@ -9,7 +9,7 @@ import vision from '../../../images/uique vission.png';
 const MoreSkills = () => {
     return (
         <div className=" bg-base-200 pb-16">
-            <h1 className='py-10 text-4xl text-white font-bold text-center'>Why Choose Me?</h1>
+            <h1 className='py-10 text-3xl md:text-5xl font-bold text-center'>Why Choose Me?</h1>
             <div>
                 <div className='grid grid-cols-2 lg:grid-cols-3 gap-6 py-10'>
                     <div className='text-center'>

@@ -17,7 +17,7 @@ const Services = () => {
 
     return (
         <div>
-            <h1 className='text-6xl text-white text-center font-bold pt-20 pb-8'>Services</h1>
+            <h1 className='text-3xl md:text-5xl font-bold text-center pt-20 pb-8'>Services</h1>
             <div className='py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     services.map(service => <Card
@@ -27,7 +27,7 @@ const Services = () => {
                 }
             </div>
             <div className='text-center py-12'>
-                <Link to='/allServices' className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-success">See All</Link>
+                <Link to='/allServices' className="btn btn-outline btn-success">See All</Link>
             </div>
         </div>
     );

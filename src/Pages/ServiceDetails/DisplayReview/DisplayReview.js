@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { FaUser } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
 
 const DisplayReview = ({ data, user }) => {
 
@@ -14,7 +13,7 @@ const DisplayReview = ({ data, user }) => {
                 setReview(data)
             })
             .catch(error => console.log(error.message));
-    }, []);
+    }, [_id]);
 
 
 
@@ -32,30 +31,11 @@ const DisplayReview = ({ data, user }) => {
                     </thead>
                     <tbody>
                         {
-                            review.map(rev => (
-                                <tr>
+                            review.map((rev, i) => (
+                                <tr key={i}>
 
                                     <td>
                                         <div className="flex items-center space-x-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
-                                                    {
-                                                        // user?.photoURL?
-                                                        // <img src={user?.photoURL} alt="Avatar Tailwind CSS Component" />:
-                                                        // <FaUser/>
-                                                        review?.photoURL ?
-                                                            <img
-                                                                className='mx-3'
-                                                                title={review?.displayName}
-                                                                style={{ height: '36px', borderRadius: '50%' }}
-                                                                src={review?.photoURL}
-                                                                alt=''>
-                                                            </img>
-                                                            :
-                                                            <FaUser className='mx-3' />
-                                                    }
-                                                </div>
-                                            </div>
                                             <div>
                                                 <div className="font-bold">{rev.name}</div>
                                             </div>

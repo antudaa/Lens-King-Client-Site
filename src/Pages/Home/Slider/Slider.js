@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Slider.css';
 
 const Slider = () => {
@@ -7,33 +6,17 @@ const Slider = () => {
 
 
     return (
-        <div className="carousel w-full mt-10 rounded-lg">
-            <div id="slide1" className="carousel-item relative w-full slider-img">
-                <img alt='' src="https://themes.themegoods.com/photography/demo1/wp-content/uploads/2015/06/photo-1418225043143-90858d2301b4.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide4" className="btn btn-circle">❮</a>
-                    <a href="#slide2" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide2" className="carousel-item relative w-full slider-img">
-                <img alt='' src="https://wiso.foxthemes.me/wp-content/uploads/2018/05/chester-wade-415018-unsplash.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide1" className="btn btn-circle">❮</a>
-                    <a href="#slide3" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide3" className="carousel-item relative w-full slider-img">
-                <img alt='' src="https://wiso.foxthemes.me/wp-content/uploads/2018/04/petr-ovralov-239614.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide2" className="btn btn-circle">❮</a>
-                    <a href="#slide4" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide4" className="carousel-item relative w-full slider-img">
-                <img alt='' src="https://wiso.foxthemes.me/wp-content/uploads/2018/05/stock-photo-203371029.jpg" className="w-full" />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a>
-                    <a href="#slide1" className="btn btn-circle">❯</a>
+        <div className='w-full h-[550px] text-white'>
+            <div className='w-full h-full'>
+                <div className='absolute w-full h-[550px] bg-gradient-to-r from-black'></div>
+                <img className='w-full h-full' src={`https://i.ibb.co/ZG2GwT7/Lens-King-Banner.jpg`} alt='' />
+                <div className='absolute w-full top-[20%] p-4 md:p-8'>
+                    <h2 className='text-3xl md:text-5xl font-bold'>Welcome to Lens King</h2>
+                    
+                    <p className='my-6 w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-300'>See the beauty of the world through my lens. We help you to capture your priceless emotions. <br /> I offer you a good service at an affordable price to capture your moments. I hope my skill and experience will impress you. Feel free to check my services and if you like it please give a review . Thank you . </p>
+                    <div className='my-4'>
+                        <button className='border text-white border-gray-300 py-2 px-5 hover:bg-white hover:text-black hover:border-none rounded-sm'>Contact</button>
+                    </div>
                 </div>
             </div>
         </div>

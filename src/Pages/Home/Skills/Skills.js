@@ -10,7 +10,7 @@ const Skills = () => {
             <div className="hero min-h-screen bg-base-200 ">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='lg:w-1/2 p-8'>
-                        <h1 className='my-10 text-4xl text-start text-white font-bold'>My Skills</h1>
+                        <h1 className='my-10 text-3xl md:text-5xl font-bold '>My Skills</h1>
                         <div className='grid grid-cols-2 gap-6'>
                             <div>
                                 <div className="radial-progress text-yellow-700" style={{ "--value": "90", "--size": "4rem", "--thickness": "2px" }}><p className='text-white'>90%</p></div>

@@ -6,55 +6,88 @@ const Blogs = () => {
     DynamicTitle("Blogs");
 
     return (
-        <div className='text-center mb-32'>
-            <h1 className='text-4xl font-bold my-16 text-cyan-500'>Our Blogs</h1>
-            <div className="collapse">
-                <input type="checkbox" />
-                <div className="collapse-title text-xl font-medium">
-                    Difference between SQL and NoSQL
-                </div>
-                <div className="collapse-content">
-                    <p>
-                        <img src="https://social.technet.microsoft.com/wiki/cfs-filesystemfile.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6433.sql-vs-nosql.jpg" alt="" />
-                    </p>
-                </div>
-            </div>
+        <div className="container my-12 mx-auto px-4 md:px-12">
+            <div className="flex flex-wrap -mx-1 lg:-mx-4">
 
-            <div className="collapse">
-                <input type="checkbox" />
-                <div className="collapse-title text-xl font-medium">
-                    What is JWT, and how does it work?
-                </div>
-                <div className="collapse-content">
-                    <p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. <br />
-                    Authentication server verifies the credentials and issues a jwt signed using either a secret salt or a private key. User's Client uses the JWT to access protected resources by passing the JWT in HTTP Authorization header. Resource server then verifies the authenticity of the token using the secret salt/ public key.</p>
-                </div>
-            </div>
+                <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2">
 
-            <div className="collapse">
-                <input type="checkbox" />
-                <div className="collapse-title text-xl font-medium">
-                    What is the difference between javascript and NodeJS?
-                </div>
-                <div className="collapse-content">
-                    <p>
-                        <img src="https://www.atliq.com/wp-content/uploads/2022/06/Know-the-difference-between-javascript-and-node-js-4-1024x576.jpg" alt="" />
-                    </p>
-                </div>
-            </div>
+                    <article className="overflow-hidden rounded-lg shadow-lg">
 
-            <div className="collapse">
-                <input type="checkbox" />
-                <div className="collapse-title text-xl font-medium">
-                    How does NodeJS handle multiple requests at the same time?
+                        <a href="##">
+                            <img alt="Placeholder" className="block h-auto w-full" src="https://cdn2.outdoorphotographer.com/2023/01/Icy-Tree-By-natrpixdvm.jpeg" />
+                        </a>
+
+                        <header className="flex items-center justify-between leading-tight p-2 md:p-4">
+                            <h1 className="text-lg">
+                                <a className="no-underline hover:underline text-white" href="##">
+                                    Photo By Natrpixdvm
+                                </a>
+                            </h1>
+                            <p className="text-grey-darker text-sm">
+                                11/1/2023
+                            </p>
+                        </header>
+                        <p className='px-4'>Today’s Photo of the Day is “Icy Tree” by natrpixdvm. Location: Guadalupe Mountains National Park, Texas.
+
+                            Want to get your images in the running for a Photo of the Day feature? Photo of the Day is chosen from various galleries, including Assignments, Galleries and Contests. Assignments have weekly winners that are featured on the website homepage, Facebook, Twitter and Instagram. To get your photos in the running, all you have to do is submit them.</p>
+
+                        <footer className="flex items-center justify-between leading-none p-2 md:p-4">
+                            <a className="flex items-center no-underline hover:underline text-white" href="##">
+                                <img alt="Placeholder" className="block rounded-full w-14 h-14" src="https://i.ibb.co/yP99HxM/01788362766-removebg-preview.png" />
+                                <p className="ml-2 text-sm">
+                                    Antu Das
+                                </p>
+                            </a>
+                            <a className="no-underline text-grey-darker hover:text-red-dark" href="##">
+                                <span className="hidden" >Like</span>
+                                <i className="fa fa-heart"></i>
+                            </a>
+                        </footer>
+
+                    </article>
+
                 </div>
-                <div className="collapse-content">
-                    <p>How NodeJS handle multiple client requests? NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.</p>
-                    <img className='my-6' src="https://i.stack.imgur.com/awRTq.png" alt="" />
+                <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2">
+
+                    <article className="overflow-hidden rounded-lg shadow-lg">
+
+                        <a href="##">
+                            <img alt="Placeholder" className="block h-auto w-full" src="https://cdn2.outdoorphotographer.com/2023/01/American-Robin-in-a-Flurry-%E2%80%98Waiting-on-Spring-By-Sandra-Rust.jpg" />
+                        </a>
+
+                        <header className="flex items-center justify-between leading-tight p-2 md:p-4">
+                            <h1 className="text-lg">
+                                <a className="no-underline hover:underline text-white" href="##">
+                                    Nature Photography
+                                </a>
+                            </h1>
+                            <p className="text-grey-darker text-sm">
+                                17/1/2023
+                            </p>
+                        </header>
+                        <p className='px-4'>Today’s Photo of the Day is “American Robin in a Flurry ‘Waiting on Spring’.” Location: Joliet, Illinois.
+
+                            Want to get your images in the running for a Photo of the Day feature? Photo of the Day is chosen from various galleries, including Assignments, Galleries and Contests. Assignments have weekly winners that are featured on the website homepage, Facebook, Twitter and Instagram. To get your photos in the running, all you have to do is submit them..</p>
+
+                        <footer className="flex items-center justify-between leading-none p-2 md:p-4">
+                            <a className="flex items-center no-underline hover:underline text-white" href="##">
+                                <img alt="Placeholder" className="block rounded-full w-14 h-14" src="https://i.ibb.co/yP99HxM/01788362766-removebg-preview.png" />
+                                <p className="ml-2 text-sm">
+                                    Antu Das
+                                </p>
+                            </a>
+                            <a className="no-underline text-grey-darker hover:text-red-dark" href="##">
+                                <span className="hidden" >Like</span>
+                                <i className="fa fa-heart"></i>
+                            </a>
+                        </footer>
+
+                    </article>
+
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default Blogs;
