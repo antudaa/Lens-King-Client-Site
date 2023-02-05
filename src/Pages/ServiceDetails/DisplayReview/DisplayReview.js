@@ -37,7 +37,7 @@ const DisplayReview = ({ data, user }) => {
                                     <td>
                                         <div className="flex items-center space-x-3">
                                             <div>
-                                                <div className="font-bold">{rev.name}</div>
+                                                <div className="font-bold">{rev?.name}</div>
                                             </div>
                                         </div>
                                     </td>
@@ -45,7 +45,7 @@ const DisplayReview = ({ data, user }) => {
                                         {rev?.email ? rev.email : <p>Not found!</p>}
 
                                     </td>
-                                    <td>{rev.comment}</td>
+                                    <td>{rev?.comment}</td>
                                 </tr>
                             ))
                         }

@@ -28,38 +28,12 @@ const Login = () => {
         login(email, password)
             .then(userCredential => {
                 const user = userCredential.user;
-
-                toast(`User logged In Successfully ${email}`, {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                })
-
-                // const currentUser = {
-                //     uid : user.uid
-                // }
-
-                // console.log(currentUser);
-
-                // Getting jwt token
-                // fetch(`https://lens-king-server.vercel.app/jwt`, {
-                //     method : 'POST', 
-                //     headers : {
-                //         'content-type' : 'application/json'
-                //     },
-                //     body : JSON.stringify(currentUser)
-                // })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-
-                    
-                })
+                console.log(user);
+                toast.success('Login Successful.')
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
 
                 // Navigate(from, { replace: true });
                 form.reset();

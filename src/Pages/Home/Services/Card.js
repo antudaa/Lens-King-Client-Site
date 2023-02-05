@@ -12,17 +12,19 @@ const Card = ({ service }) => {
     const detail = details.slice(0, 100);
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div style={{
+            border: '0.5px solid gray'
+        }} className="mx-auto my-2 rounded w-92 md:w-96 lg:w-96 bg-base-100 shadow-xl">
             <PhotoProvider>
                 <PhotoView src={image_url}>
-                    <img src={image_url} alt="" />
+                    <img className='rounded h-[280px] w-full' src={image_url} alt="" />
                 </PhotoView>
             </PhotoProvider>
 
             <div className="card-body">
                 <h2 className="card-title">
                     {service_name}
-                    <div className="badge badge-secondary">Rating : 4.5</div>
+                    <div className="badge badge-secondary">4.5</div>
                 </h2>
                 <p>{`${detail}`}</p>
                 <div className="card-actions justify-start mt-4">

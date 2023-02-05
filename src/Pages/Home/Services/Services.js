@@ -18,7 +18,7 @@ const Services = () => {
     return (
         <div>
             <h1 className='text-3xl md:text-5xl font-bold text-center pt-20 pb-8'>Services</h1>
-            <div className='py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className=' py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     services.map(service => <Card
                     key={service._id}

@@ -37,7 +37,7 @@ const Skills = () => {
                     <div className='lg:w-1/2'>
                         <PhotoProvider>
                             <PhotoView src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/josh-applegate-211348.jpg'>
-                                <img className=" rounded-lg shadow-2xl" src='https://wiso.foxthemes.me/wp-content/uploads/2018/04/josh-applegate-211348.jpg' alt="" />
+                                <img className=" rounded-lg shadow-2xl lg:h-[600px]" src='https://i.ibb.co/LnVhH0p/Portrait.jpg' alt="" />
                             </PhotoView>
                         </PhotoProvider>
                     </div>
