@@ -1,23 +1,28 @@
-# Live site Link 
-# https://lens-king-108c1.web.app/
+## Live site Link 
 
-### A simple personal website for a photographer ...
+[https://lens-king-108c1.web.app/]
 
-### Technologies used 
+## Server Site Code 
 
-### React , Firebase , React Router, Node , Express , MongoDB
+[https://github.com/antudaa/Lens-King-Server-Site]
 
-### Implemented Authentication with Firebase
-### Made it single page website use of React Router
-### Used real data using 
+#### A simple personal website for a photographer ...
 
-### MongoDb 
-### Node
-### Express  
+#### Technologies used 
 
-### Set private routes for users. User only access the routs when they are logged In
-### Also implemented review section where user give review for services which are post to mongodb database and then show the reviews to my review page from my review page user can delete the review ...
-### Also implemented a section where any user able to add a new service which is post to database and it will show to the service page...
+#### React , Firebase , React Router, Node , Express , MongoDB
+
+#### Implemented Authentication with Firebase
+#### Made it single page website use of React Router
+#### Used real data using 
+
+#### MongoDb 
+#### Node
+#### Express  
+
+#### Set private routes for users. User only access the routs when they are logged In
+#### Also implemented review section where user give review for services which are post to mongodb database and then show the reviews to my review page from my review page user can delete the review ...
+#### Also implemented a section where any user able to add a new service which is post to database and it will show to the service page...
 
 
 
